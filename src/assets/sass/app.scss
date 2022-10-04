@@ -1,0 +1,288 @@
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+.ce-block__content, .ce-toolbar__content{
+    max-width:100% !important;
+    margin-left:0px;
+}
+
+.ce-toolbar__plus{
+    background:#ffffff;
+}
+
+[contenteditable]:focus {
+    outline: 0px solid transparent;
+}
+
+.transition{
+    transition: all 0.3s ease-in-out;
+}
+
+#settings{
+    display:none;
+    &.open{
+        display:block;
+    }
+}
+
+#deploy-modal{
+    display:none;
+    &.open{
+        display:flex;
+    }
+}
+
+#settings-sidebar{
+    right: -28rem;
+    &.open{
+        right:0px;
+    }
+}
+
+#meta-sidebar{
+    right:-28rem;
+    &.open{
+        right:0px;
+    }
+}
+
+.viking-input{
+    @apply bg-white border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal;
+    &:focus{
+        @apply outline-none shadow-outline;
+    }
+}
+
+.viking-label{
+    @apply text-gray-600 text-sm font-medium mb-3 inline-block;
+}
+
+#notification{
+    width: 320px;
+    left: 50%;
+    margin-left: -160px;
+    height: 100px;
+    bottom:-200px;
+    z-index:999;
+    &.open{
+        bottom:0px;
+    }
+    .bubble{
+        width: 75px;
+        height: 75px;
+        margin-top: 13px;
+        margin-left: 13px;
+    }
+    img{
+        margin-top: -25px;
+        margin-left: 4px;
+        width: 94px;
+        height: auto;
+    }
+    &.danger{
+        img{
+            margin-top: -8px;
+            margin-left: 2px;
+            width: 90px;
+            height: auto;
+        }
+    }
+    &.info{
+        img{
+            margin-top: -15px;
+            margin-left: 19px;
+            width: 76px;
+            height: auto;
+        }
+    }
+    &.warning{
+        img{
+            margin-top: 5px;
+            margin-left: 4px;
+            width: 90px;
+            height: auto;
+        }
+    }
+}
+
+#post{
+    .ce-block--stretched{
+        @apply -ml-12 -mr-10;
+        .image-tool__image{
+            border-radius:0px;
+        }
+    }
+
+    .cdx-settings-button:not(:nth-child(3n+3)), .ce-settings__button:not(:nth-child(3n+3)){
+        margin-right: 0px;
+    }
+
+
+
+    .ce-block{
+        @apply p-4 border border-transparent rounded-lg;
+    }
+
+    .ce-toolbar__actions{
+        right:-10px;
+    }
+
+    .cdx-block{
+        &.image-tool{
+            margin-bottom:20px;
+        }
+    }
+
+    .image-tool__image{
+        border-radius:5px;
+    }
+
+    .ce-block--focused{
+        @apply shadow-outline;
+    }
+
+    .ce-toolbar__plus{
+        left:-37px;
+    }
+
+    .ce-settings{
+        top:15px;
+        right:15px;
+    }
+
+    h1{
+        @apply text-5xl m-0 p-0 font-bold;
+    }
+    h2{
+        @apply text-3xl m-0 p-0 font-bold;
+    }
+    h3{
+        @apply text-2xl m-0 p-0 font-bold;
+    }
+    h4, h5, h6{
+        @apply text-xl m-0 p-0 font-bold;
+    }
+    p, .ce-paragraph{
+        @apply text-gray-700 text-lg my-0 py-0;
+    }
+    ol, ul{
+        @apply m-0 p-0 ml-6 list-decimal text-gray-700;
+        li{
+            @apply mt-1 ml-1;
+            &:first-child{
+                @apply mt-0;
+            }
+        }
+    }
+    img{
+        @apply rounded;
+    }
+}
+
+.linear-gradient-purple{
+    background: linear-gradient(45deg, #9101fd, #e21cff);
+}
+
+.linear-gradient-blue{
+    background: linear-gradient(45deg, #0074ff, #00c6ff);
+}
+
+/********* TOGGLE Button CSS *********/
+
+
+.toggle__dot {
+    transition: all 0.3s ease-in-out;
+  }
+
+  input:checked ~ .toggle__dot {
+    transform: translateX(24px);
+    background-color: #55e6a5;
+  }
+
+  input:checked ~ .toggle__line{
+    background:#46d695;
+  }
+
+  input:checked ~ .toggle__line .no{
+    display:none;
+  }
+
+  input:checked ~ .toggle__line .yes{
+    display:block;
+  }
+
+  .yes{
+    font-size: 9px;
+    top: 3px;
+    left: -1px;
+  }
+
+/********* END TOGGLE Button CSS *********/
+.codeeditor-wrapper{
+    position: relative;
+    height: 100%;
+    min-height: 45vh;
+    .codeeditor, .ace_editor{
+        font-family: "Roboto Mono", monospace;
+        font-size: 14px;
+        position: absolute;
+        min-height: 300px;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+}
+
+.tab-container{
+    @apply fixed top-0 left-0 w-full h-full z-40 px-8 py-0 transform transition-transform duration-500 ease-in-out z-10;
+    transform: translateY(100%);
+    &.open{
+        @apply py-8 ease-out duration-300 z-30;
+        transform: translateY(0%);
+        .tab-content{
+            @apply overflow-hidden;
+            .tab{
+                @apply mr-2 mt-2 rounded-b shadow-none;
+            }
+        }
+    }
+    &#preview{
+        .tab-content{
+            @apply p-0 pt-12;
+        }
+        &.open{
+            .tab{
+                @apply mr-2;
+            }
+        }
+        .tab{
+            @apply mr-24;
+        }
+    }
+    &#console{
+        .tab-content{
+            @apply bg-black;
+        }
+        &.open{
+            .tab{
+                @apply bg-gray-900 text-white;
+                svg{
+                    @apply text-white;
+                }
+            }
+        }
+    }
+    .tab-content{
+        @apply w-full h-full relative z-30 top-0 left-0 p-5 bg-gray-200 rounded-lg shadow-2xl;
+        .tab{
+            @apply absolute right-0 top-0 h-8 rounded rounded-b-none shadow-2xl flex items-center justify-center px-2 cursor-pointer bg-white text-gray-800 -mt-8 mr-0 transition-all duration-300 ease-in-out;
+            svg{
+                @apply fill-current text-gray-900;
+            }
+        }
+    }
+}

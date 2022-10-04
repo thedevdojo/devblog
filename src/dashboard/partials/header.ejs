@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Welcome to Viking</title>
+    <link rel="stylesheet" href="/dashboard/assets/css/app.css">
+</head>
+<body class="min-h-screen h-full">
+
+    <div class="min-h-screen w-full flex justify-center">
+
+        <!-- Sidebar -->
+        <div class="w-64 bg-white flex flex-col justify-between items-start p-5 max-h-screen fixed left-0 h-full">
+            
+                <img src="/dashboard/assets/img/logo-icon.svg" class="h-5">
+
+                <nav class="text-gray-800 text-sm -mt-10">
+                    <a href="/dashboard" class="block <% if(request.url == '/dashboard'){ %>font-bold<% } else { %> font-medium hover:text-black <% } %> py-1">Dashboard</a>
+                    <a href="/dashboard/posts" class="block <% if(request.url.indexOf('/dashboard/post') !== -1){ %>font-bold<% } else { %> font-medium hover:text-black <% } %> py-1">Posts</a>
+                    <a href="/dashboard/settings" class="block <% if(request.url == '/dashboard/settings'){ %>font-bold<% } else { %> font-medium hover:text-black <% } %> py-1">Settings</a>
+                </nav>
+
+                <div class="text-gray-500">
+                    Welcome Name
+                </div>
+
+        </div>
+        <!--div class="w-64 px-12 bg-gray-200">asdf</div-->
+
+        <div class="w-full bg-gray-100 ml-64">

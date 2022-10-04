@@ -1,0 +1,15 @@
+#!/usr/bin/env node
+
+var myArgs = process.argv.slice(2);
+var cmd = myArgs[0];
+var folderName = myArgs[1];
+
+if(cmd == 'new'){
+    var newCmd = require('../src/cli/new.js');
+    newCmd.newProject(folderName);
+}
+
+if(cmd == 'serve'){
+    var serve = require('../src/cli/serve.js');
+    serve.launch();
+}

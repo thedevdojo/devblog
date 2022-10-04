@@ -1,0 +1,41 @@
+            </div>    
+        </div>
+    </div>
+
+    <div class="tab-container" id="preview">
+        <div class="w-full h-full bg-white top-0 left-0 absolute z-20 opacity-75"></div>
+        <div class="tab-content pt-20">
+            <div class="absolute top-0 left-0 w-full flex justify-center">
+                <div class="font-light max-w-sm container mx-auto mt-2 w-1/2 inline rounded bg-gray-300 px-3 text-xs text-gray-700 flex items-center justify-start h-8">
+                    <span id="iframe_url"></span>
+                </div>
+            </div>
+            <div class="rounded w-full h-full bg-white" id="preview_container"></div>
+            <div class="tab">
+                <svg class="w-4 h-auto" viewBox="0 0 203 203" xmlns="http://www.w3.org/2000/svg"><path d="M173 30c40 39 40 103 0 143s-104 40-143 0c-40-40-40-104 0-143 39-40 103-40 143 0zM11 96h32c0-12 2-23 4-34-15 6-33 18-36 34zm42 0h43V53c-13 0-26 2-37 6-4 11-6 24-6 37zm53 0h44c-1-13-3-26-6-37-11-4-24-6-38-6v43zm54 0h32c-3-16-22-28-37-34 3 11 4 22 5 34zm32 10h-32c-1 12-2 24-5 34 15-6 34-17 37-34zm-42 0h-44v44c14-1 27-3 38-6 3-11 5-24 6-38zm-54 0H53c0 14 2 27 6 38 11 3 24 5 37 6v-44zm-53 0H11c3 17 21 28 36 34-2-10-4-22-4-34zm63-95v32c12 0 24 2 34 4-6-15-17-33-34-36zm0 149v32c17-3 28-22 34-37-10 3-22 4-34 5zm-10 32v-32c-12-1-23-2-34-5 6 15 18 34 34 37zm0-149V11c-16 3-28 21-34 36 11-2 22-4 34-4zM15 70c10-9 23-15 36-19 4-13 10-26 19-36-25 10-45 30-55 55zm137-19c13 4 25 10 35 19-9-25-29-45-54-55 9 10 15 23 19 36zm35 82c-10 9-22 15-35 19-4 13-10 25-19 35 25-9 45-29 54-54zM51 152c-13-4-26-10-36-19 10 25 30 45 55 54-9-10-15-22-19-35z" /></svg>
+                <span class="ml-1 text-xs font-medium">Preview Site</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="tab-container" id="console">
+        <div class="w-full h-full bg-white top-0 left-0 absolute z-20 opacity-75"></div>
+        <div class="tab-content">
+            <div class="text-white text-sm flex flex-col overflow-scroll pb-5 h-full pr-24 font-mono rounded-lg" id="log"></div>
+            <div class="tab mr-32">
+                <svg class="w-5 h-auto" viewBox="0 0 90 74" xmlns="http://www.w3.org/2000/svg"><path d="M64.8 42.564c2.291 0 4.091 1.8 4.091 4.091 0 2.236-1.8 4.091-4.091 4.091H48.927c-2.236 0-4.091-1.855-4.091-4.091a4.086 4.086 0 014.091-4.091H64.8zM37.745 34.109c1.582 1.582 1.582 4.2 0 5.782l-9.655 9.655c-1.582 1.582-4.145 1.582-5.782 0-1.582-1.582-1.582-4.2 0-5.782L29.073 37l-6.764-6.709c-1.582-1.636-1.582-4.2 0-5.782 1.636-1.636 4.2-1.636 5.782 0l9.654 9.6z"/><path d="M81.818 58.327V15.673a7.31 7.31 0 00-7.309-7.309H15.491c-4.036 0-7.255 3.273-7.309 7.309v42.655c.055 4.036 3.273 7.309 7.309 7.309h59.018a7.31 7.31 0 007.309-7.31zM90 15.673v42.655c0 8.564-6.927 15.491-15.491 15.491H15.491C6.927 73.818 0 66.891 0 58.327V15.673C0 7.109 6.927.182 15.491.182h59.018C83.073.182 90 7.109 90 15.673z"/></svg>
+                <span class="ml-1 text-xs font-medium">Console</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="/dashboard/assets/js/app.js"></script>
+    <% if( session.notification ) { %>
+        <script>
+            showNotification('<%= session.notification_type %>', '<%= session.notification %>');
+            session.notification = '';
+            session.notification_type = ''; 
+        </script>
+    <% } %>
+</body>
+</html>

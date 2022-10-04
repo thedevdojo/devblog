@@ -1,0 +1,115 @@
+<%- include('partials/header'); -%>
+
+    <div class="dashboard-bg h-64 fixed w-full">
+        <div class="absolute w-full h-full top-0 left-0 gradient-bg"></div>
+    </div>
+    
+    <div class="px-8 relative w-full">
+            
+            <div class="flex flex-col justify-between min-h-screen py-5">
+                <div class="flex flex-col">
+                    <h1 class="font-bold text-gray-800">Dashboard</h1>
+                    <div class="w-full flex flex-wrap">
+                        
+                        <div class="w-1/4 pr-2">
+                            <div class="rounded-lg mt-6 bg-white px-6 py-4 shadow-sm h-56 flex justify-center items-center">
+                                <div class="flex justify-between items-center">
+                                    <div class="flex flex-col text-gray-900 items-center">
+                                        <h2 class="font-bold text-3xl text-center" id="time"></h2>
+                                        <p class="text-gray-500 text-xs" id="date"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="w-2/4 px-2">
+                            <div class="rounded-lg w-1/3 mt-6 h-12 px-6 py-4 w-full h-56 shadow-sm" style="background: url(https://images.unsplash.com/photo-1524260855046-f743b3cdad07?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2601&q=80);
+                            background-position: center center;
+                            background-size: cover;
+                        }">
+                                <div class="flex flex-col text-gray-100 w-full h-full items-center justify-center">
+                                    <h2 class="font-bold text-3xl font-black px-4 py-2 border-8 border-white shadow-lg">VIKING</h2>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Build Card -->
+                        <div class="w-1/4 pl-2">
+                            <div class="rounded-lg mt-6 h-56 shadow-sm bg-white px-6 py-4 flex flex-col justify-center items-center">
+                                <% if (settings.theme.active) { %>
+                                    <div class="bg-gray-900 text-white px-5 py-2 text-2xl tracking-wider font-black mt-8 rounded cursor-pointer inline-block uppercase" id="build-btn">Build</div>
+                                    <div class="flex justify-center mt-4">
+
+                                        <!-- Begin of Toggle Switch -->
+                                        <label for="toggleDev" class="flex items-center cursor-pointer select-none mr-2">
+                                            <span class="mr-2 text-gray-400 font-medium text-xs">Dev Mode</span>
+                                            <span class="relative block">
+                                                <input id="toggleDev" type="checkbox" class="hidden" data-key="dev" data-settings="environment" <% if (settings.environment.dev) { %>checked="checked"<% } %>  />
+                                                <span class="toggle__line w-12 px-2 h-6 bg-gray-100 rounded-full shadow-inner block">
+                                                    <span class="yes absolute right-0 text-white font-medium text-xs ml-2 mt-1 leading-tight hidden">ON</span>
+                                                    <span class="no absolute right-0 text-gray-500 font-medium text-xs mr-2 mt-1 leading-tight">off</span>
+                                                </span>
+                                                <!-- dot -->
+                                                <span class="toggle__dot absolute w-4 h-4 mt-1 bg-white rounded-full shadow inset-0 left-0 ml-1 block"></span>
+                                            </span>
+                                        </label>
+                                        <!-- End of Toggle Switch -->
+
+                                    </div>
+                                <% } else { %>
+                                    <div class="flex flex-col justify-between items-center h-full">
+                                        <p class="text-sm text-orange-500 py-2 px-4 font-medium bg-orange-100 rounded-lg">Before you can build your site, you'll need to activate a theme in the theme settings.</p>
+                                        <a href="/dashboard/settings#theme" class="bg-black text-white px-3 py-2 rounded font-bold cursor-pointer">Visit Theme Settings</a>
+                                        <div class="bg-gray-500 text-white px-5 py-2 text-2xl tracking-wider font-black rounded cursor-pointer inline-block uppercase">Build</div>
+                                    </div>
+                                <% } %>
+                            </div>
+                        </div>
+                        <!-- End Build Card -->
+
+                        <div class="w-1/3">
+                            <div class="mt-6 rounded-lg bg-white px-6 py-4 h-56 flex justify-center items-center shadow-sm mr-2">
+                                <div>
+                                    <h2 class="w-full text-center text-3xl font-bold text-gray-900"><%= posts.length %></h2>
+                                    <p class="text-sm text-gray-500 w-full text-center">Posts</p>
+                                    <a href="/dashboard/posts/create" class="text-gray-700 border border-gray-300 px-4 py-2 mt-5 inline-block rounded text-sm font-medium">Add New</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Deploy Card -->
+                        <div class="w-1/3">
+                            <div class="rounded-lg mt-6 h-56 shadow-sm bg-white px-6 py-4 flex flex-col justify-center items-center mx-2">
+                                
+                                <div class="bg-gray-900 text-white px-5 py-2 text-2xl tracking-wider font-black rounded cursor-pointer inline-block uppercase" id="deploy">Deploy Site</div>
+                            
+                            </div>
+                        </div>
+                        <!-- End Build Card -->
+
+                        <% if (settings.theme.active) { %>
+                            <!-- Deploy Card -->
+                            <div class="w-1/3">
+                                <div class="rounded-lg mt-6 h-56 shadow-sm bg-white px-6 py-4 flex flex-col justify-center items-center ml-2">
+                                    <div class="relative flex flex-col justify-center items-center">
+                                        <p class="text-sm mb-2 font-bold">Active Theme</p>
+                                        <img src="/content/themes/<%- settings.theme.active %>/<%- settings.theme.active %>.jpg" class="w-64 border border-gray-200 object-scale-down rounded-lg">
+                                    </div>
+                                
+                                </div>
+                            </div>
+                            <!-- End Build Card -->
+
+                        <% } %>
+
+                    </div><!-- .w-full -->
+                    
+                </div>
+
+            </div>
+
+                
+            </div>
+    </div>
+
+<%- include('partials/footer'); -%>

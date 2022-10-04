@@ -1,0 +1,6 @@
+{
+    "title": "My Awesome Viking Site",
+    "url": "http://localhost:8080",
+    "postRoute": "/post/{post}",
+    "loopRoute": "posts"
+}

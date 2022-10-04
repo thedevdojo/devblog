@@ -1,0 +1,56 @@
+<%- include('partials/header'); -%>
+
+    <div class="dashboard-bg h-64 fixed w-full">
+        <div class="absolute w-full h-full top-0 left-0 gradient-bg"></div>
+    </div>
+    <div class="px-8 relative max-w-4xl">
+            
+            <div class="min-h-screen py-5">
+                <div>
+                    <h1 class="font-bold text-gray-800">Settings</h1>
+                </div>
+
+                <div>
+                    <h2>Site Settings</h2>
+                </div>
+
+                <div>
+                    <h2>Environment Settings</h2>
+                </div>
+
+                <div>
+                    <h2>Theme Settings</h2>
+                </div>
+
+                <div>
+                    <h2>Build Settings</h2>
+                </div>
+
+                <div id="input-container"></div>
+
+            </div>
+    </div>
+
+    <script>
+        var settings = <%- JSON.stringify(site) %>;
+        var updateButton = document.getElementById('update-btn');
+        var inputContainer = document.getElementById('input-container');
+
+        for (var key in settings) {
+            var inputPairContainer = document.createElement("div");
+                inputPairContainer.classList.add(`${key}`);
+            var newInputKey = document.createElement("input");
+            var newInputValue = document.createElement("input");
+
+            newInputKey.setAttribute('value', key);
+            newInputValue.setAttribute('value', settings[key]);
+
+            inputPairContainer.appendChild(newInputKey);
+            inputPairContainer.appendChild(newInputValue);
+            inputContainer.appendChild(inputPairContainer);
+            
+        }
+    </script>
+    
+
+<%- include('partials/footer'); -%>
