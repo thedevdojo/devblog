@@ -553,7 +553,7 @@ const builder = module.exports = {
 
     adminBarHTML() {
         return `<div style="background-color: #000; z-index: 50; width: 100%; left: 0; bottom:0; position: fixed; height: 2.5rem; -webkit-box-pack: justify; justify-content: space-between; -webkit-box-align: center; align-items: center; display: -webkit-box; display: flex; box-sizing: border-box; border-width:0px;">
-                    <img src="/dashboard/assets/img/logo-inverse.svg" style="width: auto; padding-left: 0.5rem; height: 1rem;">
+                    <svg class="w-4 h-4 ml-3 h-auto" viewBox="0 0 6 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="#fff" d="M0 3h2.5v2.5H0zM3 3h2.5v2.5H3zM3 0h2.5v2.5H3z"/></svg>
                     <div style="display: -webkit-box; display: flex; height: 2.5rem;">
                         <a href="/dashboard" style="text-transform: uppercase; font-size: 0.75rem; color: #fff; padding-left: 0.75rem; padding-right: 0.75rem; height: 100%; font-weight: 500; -webkit-box-align: center; align-items: center; display: -webkit-box; display: flex; border-left-width: 1px; border-right-width: 1px; border-color: #2d3748;">Dashboard</a>
                     </div>

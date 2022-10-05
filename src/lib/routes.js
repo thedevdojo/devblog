@@ -44,7 +44,8 @@ module.exports = {
         });
 
         app.get('/dashboard/posts/create', function(req, res){
-            res.render(folder.devblogPath() + 'src/dashboard/single', { request: req, post: {}, debug: debug, session: req.session });
+            let posts = post.orderBy('created_at', 'DESC').getPosts();
+            res.render(folder.devblogPath() + 'src/dashboard/single', { request: req, post: {}, posts: posts, debug: debug, session: req.session });
         });
 
         app.post('/dashboard/update/settings/:file', function(req, res){

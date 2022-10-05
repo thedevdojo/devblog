@@ -7,14 +7,14 @@ const self = module.exports = {
     load() {
 
         self.createSettingsFolderIfItDoesNotExist();
-console.log(folder.settingsPath());
+        
         let settings = fs.readdirSync( folder.settingsPath() );
         let settingsArr = [];
         for(var i=0; i<settings.length; ++i){
             let settingKey = settings[i].replace('.json', '');
             settingsArr[settingKey] = self.loadSetting(settingKey);
         }
-        console.log(settingsArr);
+
         return Object.assign({}, settingsArr);
     },
 

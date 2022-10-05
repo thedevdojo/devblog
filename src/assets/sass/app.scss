@@ -265,7 +265,7 @@
         }
         &.open{
             .tab{
-                @apply bg-gray-900 text-white;
+                @apply bg-gray-900 text-white border-gray-800;
                 svg{
                     @apply text-white;
                 }
@@ -275,7 +275,7 @@
     .tab-content{
         @apply w-full h-full relative z-30 top-0 left-0 p-5 bg-gray-200 rounded-lg shadow-2xl;
         .tab{
-            @apply absolute right-0 top-0 h-8 rounded rounded-b-none shadow-2xl flex items-center justify-center px-2 cursor-pointer bg-white text-gray-800 -mt-8 mr-0 transition-all duration-300 ease-in-out;
+            @apply absolute right-0 top-0 h-8 rounded rounded-b-none shadow-2xl flex items-center justify-center px-2 border border-gray-200 border-b-0 cursor-pointer bg-white text-gray-800 -mt-8 mr-0 transition-all duration-300 ease-in-out;
             svg{
                 @apply fill-current text-gray-900;
             }
