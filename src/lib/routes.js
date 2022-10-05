@@ -5,7 +5,7 @@ const ghpages = require('gh-pages');
 const parse = require('parse-git-config');
 const globalModulesPath = require("global-modules-path");
 
-const folder = require(globalModulesPath.getPath("viking") + '/src/lib/folder.js');
+const folder = require(globalModulesPath.getPath("devblog") + '/src/lib/folder.js');
 const builder = require(folder.devblogPath() + 'src/lib/builder.js');
 const settings = require(folder.devblogPath() + 'src/lib/settings.js');
 const Post = require(folder.devblogPath() + 'src/lib/post.js');
@@ -173,8 +173,9 @@ module.exports = {
         });
 
         app.get('/dashboard/post/:post', function(req, res){
-            let post = JSON.parse( fs.readFileSync( folder.post() + req.params.post + '.json' ) );
-            res.render(folder.devblogPath() + 'src/dashboard/single', { request: req, post: post, debug: debug, session: req.session });
+            let posts = post.orderBy('created_at', 'DESC').getPosts();
+            let thisPost = JSON.parse( fs.readFileSync( folder.post() + req.params.post + '.json' ) );
+            res.render(folder.devblogPath() + 'src/dashboard/single', { request: req, post: thisPost, posts: posts, debug: debug, session: req.session });
         });
 
         app.get('/dashboard/fetchURL', function(req, res){

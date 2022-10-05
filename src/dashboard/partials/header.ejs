@@ -4,29 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Welcome to Viking</title>
+    <title>Developer Blog</title>
     <link rel="stylesheet" href="/dashboard/assets/css/app.css">
 </head>
 <body class="min-h-screen h-full">
 
-    <div class="min-h-screen w-full flex justify-center">
+    <div class="app bg-white flex font-sans antialiased h-screen overflow-hidden">
 
         <!-- Sidebar -->
-        <div class="w-64 bg-white flex flex-col justify-between items-start p-5 max-h-screen fixed left-0 h-full">
-            
-                <img src="/dashboard/assets/img/logo-icon.svg" class="h-5">
-
-                <nav class="text-gray-800 text-sm -mt-10">
-                    <a href="/dashboard" class="block <% if(request.url == '/dashboard'){ %>font-bold<% } else { %> font-medium hover:text-black <% } %> py-1">Dashboard</a>
-                    <a href="/dashboard/posts" class="block <% if(request.url.indexOf('/dashboard/post') !== -1){ %>font-bold<% } else { %> font-medium hover:text-black <% } %> py-1">Posts</a>
-                    <a href="/dashboard/settings" class="block <% if(request.url == '/dashboard/settings'){ %>font-bold<% } else { %> font-medium hover:text-black <% } %> py-1">Settings</a>
-                </nav>
-
-                <div class="text-gray-500">
-                    Welcome Name
-                </div>
-
+        <div class="w-48 hidden lg:flex lg:flex-col overflow-y-auto bg-white px-8 py-3 pr-12 bg-gray-100 border-r border-gray-200">
+            <div class="text-gray-900 flex items-center font-bold mb-12 mt-8">
+                <svg class="w-4 h-4 mr-2 h-auto" viewBox="0 0 6 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="#000" d="M0 3h2.5v2.5H0zM3 3h2.5v2.5H3zM3 0h2.5v2.5H3z"/></svg>
+                <span>devblog</span>
+            </div>
+            <ul class="list-reset pb-16 space-y-4">
+                <li><a class="no-underline <% if(request.url == '/dashboard'){ %>font-bold text-gray-900<% } else { %> text-gray-700 font-medium hover:text-black <% } %>" href="/dashboard">Dashboard</a></li>
+                <li><a class="no-underline <% if(request.url == '/dashboard/posts'){ %>font-bold text-gray-900<% } else { %> text-gray-700 font-medium hover:text-black <% } %>" href="/dashboard/posts">Posts</a></li>
+                <li><a class="no-underline <% if(request.url == '/dashboard/settings'){ %>font-bold text-gray-900<% } else { %> text-gray-700 font-medium hover:text-black <% } %>" href="/dashboard/settings">Settings</a></li>
+            </ul>
+            <div class="categories-settings mt-auto flex justify-between items-center">
+                <a href="#" class="no-underline hover:text-black text-gray-500">Settings</a>
+                <a href="#" class="no-underline hover:bg-red-dark w-6 h-6 text-xs bg-red rounded-full flex justify-center items-center text-white font-bold">2</a>
+            </div>
         </div>
-        <!--div class="w-64 px-12 bg-gray-200">asdf</div-->
-
-        <div class="w-full bg-gray-100 ml-64">

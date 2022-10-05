@@ -1,4 +1,8 @@
 module.exports = {
+    content: [
+        './src/dashboard/**/*.{html,js,ejs}',
+        './src/dashboard/*.{html,js,ejs}'
+    ],
     theme: {
         extend: {}
     },

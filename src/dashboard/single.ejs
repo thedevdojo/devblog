@@ -1,5 +1,7 @@
 <%- include('partials/header'); -%>
-        
+
+    <%- include('partials/posts'); -%>
+
     <div class="relative flex justify-start">
         <div class="max-w-4xl min-h-screen bg-white flex-1 px-10 pl-12 py-8 border-r border-l border-gray-200" id="post">
             <input name="title" placeholder="Post Title" class="viking-input text-4xl font-bold text-black mb-4 w-full px-4 border-none overflow-visible" id="title" value="<% if (post.title) { %><%= post.title %><% } %>">

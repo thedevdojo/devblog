@@ -1,7 +1,7 @@
 const fs = require('fs-extra');
 const request = require('superagent');
 const globalModulesPath = require("global-modules-path");
-const vikingNewFolder = globalModulesPath.getPath("viking") + '/src/site/';
+const devblogNewFolder = globalModulesPath.getPath("devblog") + '/src/site/';
 const process = require('process');
 const admZip = require('adm-zip');
 
@@ -13,7 +13,7 @@ const themeSource = `${href}/${zipFile}`;
 
 module.exports = {
     welcome() {
-        console.log('Welcome to Viking');
+        console.log('Welcome to your new developer blog!');
     },
     createFolder(folderName) {
         console.log('creating new folder ' + folderName);
@@ -22,10 +22,10 @@ module.exports = {
           });
     },
     newProject(folderName) {
-        console.log('Welcome Viking!');
+        console.log('Welcome Fellow Developer!');
         console.log('Generating your new site inside ' + folderName + ' folder.');
         fs.mkdirSync('./' + folderName , { recursive: true });
-        fs.copySync(vikingNewFolder, './' + folderName);
+        fs.copySync(devblogNewFolder, './' + folderName);
 
         process.chdir(process.cwd() + '/' + folderName);
         console.log('Downloading default theme for your site');
@@ -44,10 +44,10 @@ module.exports = {
 
                 fs.unlinkSync(`./${zipFile}`);
 
-                var serve = require(require("global-modules-path").getPath("viking") + '/src/cli/serve.js');
+                var serve = require(require("global-modules-path").getPath("devblog") + '/src/cli/serve.js');
 
-                console.log('Prepare your Hammer and Axe!')
-                console.log('Because it\'s time to start building...');
+                console.log('Generated your new developer blog.')
+                console.log('It\'s time to rock and roll!');
 
                 serve.launch();
 

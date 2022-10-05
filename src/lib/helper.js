@@ -1,7 +1,7 @@
 const getPort = require('get-port');
 const fs = require('fs-extra');
 const globalModulesPath = require("global-modules-path");
-const folder = require(globalModulesPath.getPath("viking") + '/src/lib/folder.js');
+const folder = require(globalModulesPath.getPath("devblog") + '/src/lib/folder.js');
 const watch = require('node-watch');
 const settings = require(folder.devblogPath() + '/src/lib/settings.js');
 
@@ -61,7 +61,6 @@ const self = module.exports = {
 
     watch(io){
         let builder = require(folder.devblogPath() + 'src/lib/builder.js');
-        console.log('and hit here');
         self.consoleLog(io, '<span class="text-purple-500">Watching for changes inside: </span>' + folder.sitePath());
         watcher = watch(folder.contentPath(), { recursive: true }, function(evt, name) {
              self.consoleLog(io, '<span class="text-teal-500">' + name + ' changed. Executing Build Process.</span>');

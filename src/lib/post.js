@@ -1,6 +1,6 @@
 const fs = require('fs-extra');
 const globalModulesPath = require("global-modules-path");
-const folder = require(globalModulesPath.getPath("viking") + '/src/lib/folder.js');
+const folder = require(globalModulesPath.getPath("devblog") + '/src/lib/folder.js');
 
 class Post{
 
@@ -24,6 +24,11 @@ class Post{
     }
 
     loadPosts(){
+        // if the posts path folder does not exist, create it
+        if (!fs.existsSync(folder.postPath())){
+            fs.mkdirSync(folder.postPath(), { recursive: true });
+        }
+
         this.posts = [];
         let postFiles = fs.readdirSync( folder.postPath() )
 

@@ -8,7 +8,7 @@ const sizeOf = require('image-size');
 const minify = require('html-minifier').minify;
 const globalModulesPath = require("global-modules-path");
 
-const folder = require(globalModulesPath.getPath("viking") + '/src/lib/folder.js');
+const folder = require(globalModulesPath.getPath("devblog") + '/src/lib/folder.js');
 const settings = require(folder.devblogPath() + '/src/lib/settings.js').load();
 const Post = require(folder.devblogPath() + 'src/lib/post.js');
 

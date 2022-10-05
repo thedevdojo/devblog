@@ -52,7 +52,7 @@
 .viking-input{
     @apply bg-white border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal;
     &:focus{
-        @apply outline-none shadow-outline;
+        @apply outline-none;
     }
 }
 
@@ -138,10 +138,6 @@
 
     .image-tool__image{
         border-radius:5px;
-    }
-
-    .ce-block--focused{
-        @apply shadow-outline;
     }
 
     .ce-toolbar__plus{
