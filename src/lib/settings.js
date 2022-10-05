@@ -7,7 +7,7 @@ const self = module.exports = {
     load() {
 
         self.createSettingsFolderIfItDoesNotExist();
-
+console.log(folder.settingsPath());
         let settings = fs.readdirSync( folder.settingsPath() );
         let settingsArr = [];
         for(var i=0; i<settings.length; ++i){
