@@ -20,7 +20,6 @@ let notificationShown = 0;
 
 module.exports = {
     launch() {
-
         helper.getRandomPort(8080).then(function(port) {
             
             app.set('view engine', 'ejs');
