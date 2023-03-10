@@ -637,8 +637,23 @@ video {
 .mb-12 {
   margin-bottom: 3rem;
 }
+.mt-0 {
+  margin-top: 0px;
+}
+.ml-1\.5 {
+  margin-left: 0.375rem;
+}
 .mt-auto {
   margin-top: auto;
+}
+.mr-1\.5 {
+  margin-right: 0.375rem;
+}
+.mr-1 {
+  margin-right: 0.25rem;
+}
+.-ml-1 {
+  margin-left: -0.25rem;
 }
 .mt-7 {
   margin-top: 1.75rem;
@@ -760,9 +775,6 @@ video {
 .w-5 {
   width: 1.25rem;
 }
-.w-48 {
-  width: 12rem;
-}
 .w-72 {
   width: 18rem;
 }
@@ -874,6 +886,9 @@ video {
 .rounded-full {
   border-radius: 9999px;
 }
+.rounded-md {
+  border-radius: 0.375rem;
+}
 .rounded-t-lg {
   border-top-left-radius: 0.5rem;
   border-top-right-radius: 0.5rem;
@@ -975,6 +990,9 @@ video {
 .fill-current {
   fill: currentColor;
 }
+.stroke-gray-900 {
+  stroke: #111827;
+}
 .object-scale-down {
   -o-object-fit: scale-down;
      object-fit: scale-down;
@@ -1046,9 +1064,9 @@ video {
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
-.py-3 {
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
+.py-2\.5 {
+  padding-top: 0.625rem;
+  padding-bottom: 0.625rem;
 }
 .py-6 {
   padding-top: 1.5rem;
@@ -1084,6 +1102,9 @@ video {
 }
 .pr-24 {
   padding-right: 6rem;
+}
+.pt-3 {
+  padding-top: 0.75rem;
 }
 .pr-12 {
   padding-right: 3rem;
@@ -1316,6 +1337,9 @@ video {
 }
 .duration-200 {
   transition-duration: 200ms;
+}
+.ease-out {
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
 }
 .ease-linear {
   transition-timing-function: linear;
@@ -1704,9 +1728,17 @@ input:checked ~ .toggle__line .yes {
   --tw-bg-opacity: 1;
   background-color: rgb(219 234 254 / var(--tw-bg-opacity));
 }
+.hover\:bg-gray-900:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(17 24 39 / var(--tw-bg-opacity));
+}
 .hover\:text-black:hover {
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+.group:hover .group-hover\:translate-x-\[3px\] {
+  --tw-translate-x: 3px;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 .group:hover .group-hover\:bg-gray-200 {
   --tw-bg-opacity: 1;
@@ -1715,6 +1747,9 @@ input:checked ~ .toggle__line .yes {
 .group:hover .group-hover\:text-gray-600 {
   --tw-text-opacity: 1;
   color: rgb(75 85 99 / var(--tw-text-opacity));
+}
+.group:hover .group-hover\:opacity-100 {
+  opacity: 1;
 }
 @media (min-width: 768px) {
 

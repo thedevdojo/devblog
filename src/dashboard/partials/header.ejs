@@ -12,18 +12,26 @@
     <div class="app bg-white flex font-sans antialiased h-screen overflow-hidden">
 
         <!-- Sidebar -->
-        <div class="w-48 hidden lg:flex lg:flex-col overflow-y-auto px-8 py-3 pr-12 bg-gray-100 flex-shrink-0 border-r border-gray-100">
+        <div class="w-64 hidden lg:flex lg:flex-col overflow-y-auto px-8 pt-3 pb-5 pr-12 bg-gray-100 flex-shrink-0 border-r border-gray-100">
             <div class="text-gray-900 flex items-center font-bold mb-12 mt-8">
                 <svg class="w-4 h-4 mr-2 h-auto" viewBox="0 0 6 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="#000" d="M0 3h2.5v2.5H0zM3 3h2.5v2.5H3zM3 0h2.5v2.5H3z"/></svg>
                 <span>devblog</span>
             </div>
             <ul class="list-reset pb-16 space-y-4">
-                <li><a class="no-underline <% if(request.url == '/dashboard'){ %>font-bold text-gray-900<% } else { %> text-gray-700 font-medium hover:text-black <% } %>" href="/dashboard">Dashboard</a></li>
-                <li><a class="no-underline <% if(request.url == '/dashboard/posts'){ %>font-bold text-gray-900<% } else { %> text-gray-700 font-medium hover:text-black <% } %>" href="/dashboard/posts">Posts</a></li>
-                <li><a class="no-underline <% if(request.url == '/dashboard/settings'){ %>font-bold text-gray-900<% } else { %> text-gray-700 font-medium hover:text-black <% } %>" href="/dashboard/settings">Settings</a></li>
+                <li>
+                    <a class="no-underline text-sm relative <% if(request.url == '/dashboard'){ %>font-bold text-gray-900<% } else { %> text-gray-700 font-medium hover:text-black <% } %>" href="/dashboard">
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li><a class="no-underline text-sm relative <% if(request.url == '/dashboard/posts'){ %>font-bold text-gray-900<% } else { %> text-gray-700 font-medium hover:text-black <% } %>" href="/dashboard/posts">Posts</a></li>
+                <li><a class="no-underline text-sm relative <% if(request.url == '/dashboard/settings'){ %>font-bold text-gray-900<% } else { %> text-gray-700 font-medium hover:text-black <% } %>" href="/dashboard/settings">Settings</a></li>
             </ul>
             <div class="categories-settings mt-auto flex justify-between items-center">
-                <a href="#" class="no-underline hover:text-black text-gray-500">Settings</a>
-                <a href="#" class="no-underline hover:bg-red-dark w-6 h-6 text-xs bg-red rounded-full flex justify-center items-center text-white font-bold">2</a>
+                <a href="/" class="no-underline text-xs font-medium bg-black hover:bg-gray-900 text-white px-3 w-full py-2.5 group rounded-md duration-100 ease-out block flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 mr-1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25" /></svg>
+                                            
+                    <!-- <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 -ml-1 mr-1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75" /></svg> -->
+                    <span>My Website</span>
+                </a>
             </div>
         </div>

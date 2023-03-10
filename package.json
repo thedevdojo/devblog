@@ -1,6 +1,6 @@
 {
   "name": "devblog",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Developer Blog Platform",
   "main": "index.js",
   "scripts": {
